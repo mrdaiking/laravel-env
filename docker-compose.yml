@@ -1,0 +1,72 @@
+version: '3'
+services:
+
+  # The Application PHP
+  app:
+    container_name: application
+    build:
+      context: ./app
+      dockerfile: app.dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./app/:/var/www/
+
+  # The Web Server Nginx
+  web:
+    container_name: webserver
+    build:
+      context: ./web/
+      dockerfile: web.dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./web/:/var/www/
+      - ./app/public:/var/www/public
+    ports:
+      - 8080:80
+
+  # The Database MySQL
+  database:
+    container_name: database
+    image: mysql:8.0.17
+    volumes:
+      - ./db/dbdata:/var/lib/mysql
+      - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
+    command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci','--default-authentication-plugin=mysql_native_password']
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_USER: 'root'
+      MYSQL_DATABASE: root
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+        - "33061:3306"
+
+  # The phpmyAdmin manage database
+  phpmyadmin:
+    container_name: phpmyadmin
+    restart: 'no'
+    image: 'phpmyadmin/phpmyadmin:4.6'
+    depends_on: 
+      - database
+    ports:
+      - '9090:80'
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: database
+      PMA_PORT: 3306
+      PMA_PASSWORD: root
+
+  #Caching Redis
+  redis: 
+    container_name: redis
+    image: redis:alpine
+  
+  #Composer
+  # composer:
+  #   container_name: composer
+  #   image: localcomposer:latest
+  #   volumes:
+  #     - ${PWD}/main:/var/www/html
+
+
+volumes:
+  dbdata:
