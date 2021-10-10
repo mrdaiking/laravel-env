@@ -4423,7 +4423,10 @@ input[type=button].btn-block {
   flex-wrap: wrap;
   padding-left: 0;
   margin-bottom: 0;
+  justify-content: 'center';
+  flex: 1;
   list-style: none;
+
 }
 
 .nav-link {
@@ -4601,6 +4604,7 @@ input[type=button].btn-block {
   max-height: 75vh;
   overflow-y: auto;
 }
+
 
 @media (max-width: 575.98px) {
   .navbar-expand-sm > .container,
@@ -10941,4 +10945,3 @@ a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
-

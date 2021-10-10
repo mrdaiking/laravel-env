@@ -14,9 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/admin', 'AdminController@showImportantInfor')->middleware('auth','role:admin');
 
 // Route::get('/bai-viet', 'ArticleController@view') -> name('ArticleView');
 Route::resource('/baiviet', 'ArticleController');
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
