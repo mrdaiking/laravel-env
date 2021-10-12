@@ -10,7 +10,7 @@
 <!--</div>-->
 <!---->
 @section('content')
-<div class="containe full-height welcome ">
+<div class="container full-height welcome ">
     <h1>Danh sach bai viet</h1>
 </div>
 @endsection

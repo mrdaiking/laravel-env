@@ -20,3 +20,17 @@ Route::get('/admin', 'AdminController@showImportantInfor')->middleware('auth','r
 Route::resource('/baiviet', 'ArticleController');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/test', function () {
+    return view('test');
+});
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/demo', function () {
+    return view('adminstrator.dashboard.index');
+});
+
+
+Route::get('lang/home', 'LangController@index');
+Route::get('lang/change', 'LangController@change')->name('changeLang');

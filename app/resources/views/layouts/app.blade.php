@@ -10,9 +10,18 @@
     <title>{{ config('app.name', 'Blog') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/header.js') }}" defer></script>
-    <script src="{{ asset('js/backToTop.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" ></script>
+    <script src="{{ asset('js/header.js') }}" ></script>
+    <script src="{{ asset('js/backToTop.js') }}" ></script>
+    <script src="{{ asset('js/lang.js') }}" ></script>
+
+    <!--About scripts -->
+    <script src="{{ asset('js/about/custom.js') }}" ></script>
+    <script src="{{ asset('js/about/Headroom.js') }}" ></script>
+    <script src="{{ asset('js/about/jQuery.headromm.js') }}" ></script>
+    <script src="{{ asset('js/about/popper.min.js') }}" ></script>
+    <script src="{{ asset('js/about/owl.carousel.min.js') }}" ></script>
+    <script src="{{ asset('js/about/smoothscroll.min.js') }}" ></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -23,10 +32,14 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/register.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/com/footer.css') }}" rel="stylesheet">
     <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/header.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/backToTopBtn.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/com/header.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/com/backToTopBtn.css') }}" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/tooplate-style.css') }}" rel="stylesheet">
+
 </head>
 <body>
   <!--Header-->

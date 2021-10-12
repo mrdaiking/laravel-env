@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="containe full-height welcome ">
-    <h1>Testing</h1>
+<div class="container full-height welcome ">
+    <h1>Wecome Page</h1>
+    <i class="fa fa-spinner fa-spin"></i>
 </div>
 @endsection

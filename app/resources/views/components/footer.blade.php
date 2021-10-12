@@ -1,7 +1,22 @@
-<footer class="w-100 py-4 flex-shrink-0 fixed-bottom">
-    <div class="container py-4">
-        <div class="row col-12 justify-content-center">
-          <p class="small mb-0 copywrite">&copy; Copyrights. All rights reserved. <a class="text-primary" href="#">Daiking</a></p>
+<footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="social-icons">
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Behance</a></li>
+              <li><a href="#">Linkedin</a></li>
+              <li><a href="#">GitHub</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-12">
+            <div class="copyright-text">
+              <p>Copyright 2021 DaiKing.
+
+                 | Design: <a rel="nofollow" href="https://templatemo.com" target="_parent">NGUYEN PHUC CUONG</a></p>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
 </footer>
