@@ -17,9 +17,6 @@ Route::get('/', function () {
 
 Route::get('/admin', 'AdminController@showImportantInfor')->middleware('auth','role:admin');
 
-// Route::get('/bai-viet', 'ArticleController@view') -> name('ArticleView');
-Route::resource('/baiviet', 'ArticleController');
-
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/test', function () {
     return view('test');
@@ -57,6 +54,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
   });
 
   Route::resource('category', 'CategoryController');
+  Route::resource('tag','TagController');
+  Route::resource('post','PostController');
 });
 
 
