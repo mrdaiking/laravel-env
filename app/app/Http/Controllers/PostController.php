@@ -96,7 +96,7 @@ class PostController extends Controller
     {
         $tags = Tag::all();
         $categories = Category::all();
-        return view('admin.post.edit', compact(['post', 'categories', 'tags']));
+        return view('adminstrator.post.edit', compact(['post', 'categories', 'tags']));
     }
 
     /**
@@ -131,7 +131,7 @@ class PostController extends Controller
         $post->save();
 
         Session::flash('success', 'Post updated successfully');
-        return redirect()->back();
+        return redirect()->route('post.index');
     }
 
     /**
