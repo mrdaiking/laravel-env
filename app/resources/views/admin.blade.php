@@ -219,7 +219,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
             </ul>
-          </li>
+          </li> 
+          
           <li class="nav-item mt-auto">
             <a href="{{ route('category.index') }}" class="nav-link {{ (request()->is('admin/category*')) ? 'active': '' }}">
               <i class="nav-icon fas fa-tags"></i>
@@ -227,6 +228,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Categories
               </p>
             </a>                    
+          </li>
+          <li class="nav-item mt-auto">
+            <a href="{{ route('user.index') }}" class="nav-link {{ (request()->is('admin/user*')) ? 'active': '' }}">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                User
+              </p>
+            </a>
           </li>
           <li class="nav-item mt-auto">
             <a href="{{ route('tag.index') }}" class="nav-link {{ (request()->is('admin/tag*')) ? 'active': '' }}">
@@ -243,6 +252,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 Post
               </p>
             </a>                    
+          </li>
+          <li class="nav-item mt-auto">
+            <a href="{{ route('setting.index') }}" class="nav-link {{ (request()->is('admin/setting')) ? 'active': '' }}">
+              <i class="nav-icon fas fa-cog"></i>
+              <p>
+                Setting
+              </p>
+            </a>
+          </li>
+          <li class="nav-header">Your Account</li>
+          <li class="nav-item mt-auto">
+            <a href="{{ route('user.profile') }}" class="nav-link {{ (request()->is('admin/profile')) ? 'active': '' }}">
+              <i class="nav-icon far fa-user"></i>
+              <p>
+                Your Profile
+              </p>
+            </a>
+          </li>
+          <li class="nav-item mt-auto">
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link">
+              <i class="nav-icon fas fa-sign-out-alt"></i>
+              <p>
+                Logout
+              </p>
+            </a>
           </li>
         </ul>
       </nav>

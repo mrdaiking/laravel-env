@@ -11,9 +11,9 @@
 |
 */
 Auth::routes();
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('welcome');
 
 Route::get('/admin', 'AdminController@showImportantInfor')->middleware('auth','role:admin');
 
@@ -46,7 +46,8 @@ Route::get('/demo', function () {
     return view('adminstrator.dashboard.index');
 });
 
-
+// Front End Routes
+Route::get('/', 'FrontEndController@home')->name('website');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
   Route::get('/demo', function () {
@@ -56,8 +57,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
   Route::resource('category', 'CategoryController');
   Route::resource('tag','TagController');
   Route::resource('post','PostController');
-});
+  Route::resource('user', 'UserController');
 
+  Route::get('/profile', 'UserController@profile')->name('user.profile');
+  Route::post('/profile', 'UserController@profile_update')->name('user.profile.update');
+
+  // setting
+  Route::get('setting', 'SettingController@edit')->name('setting.index');
+  Route::post('setting', 'SettingController@update')->name('setting.update');
+
+});
 
 Route::get('lang/home', 'LangController@index');
 Route::get('lang/change', 'LangController@change')->name('changeLang');
