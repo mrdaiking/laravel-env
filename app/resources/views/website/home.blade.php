@@ -13,8 +13,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{asset('welcome')}}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-
+    
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="{{asset('welcome')}}/css/fontawesome.css">
     <link rel="stylesheet" href="{{asset('welcome')}}/css/templatemo-stand-blog.css">
@@ -40,7 +39,7 @@ https://templatemo.com/tm-551-stand-blog
     </div>
     <!-- ***** Preloader End ***** -->
 
-    @include('components/header')
+    @include('components/header', ['categories' => $categories])
     <!-- Page Content -->
     <!-- Banner Starts Here -->
     <div class="main-banner header-text">
@@ -54,7 +53,7 @@ https://templatemo.com/tm-551-stand-blog
                 <div class="meta-category">
                   <span>{{ $post->category->name }}</span>
                 </div>
-                <a href="post-details.html"><h4>{{ $post->title }}</h4></a>
+                <a href="{{ route('website.post', ['slug' => $post->slug]) }}"><h4>{{ $post->title }}</h4></a>
                 <ul class="post-info">
                   <li><a href="#">{{ $post->user->name }}</a></li>
                   <li><a href="#">May 12, 2020</a></li>
@@ -106,7 +105,7 @@ https://templatemo.com/tm-551-stand-blog
                     </div>
                     <div class="down-content">
                       <span>{{ $post->category->name }}</span>
-                      <a href="post-details.html"><h4>{{ $post->title }}</h4></a>
+                      <a href="{{ route('website.post', ['slug' => $post->slug]) }}"><h4>{{ $post->title }}</h4></a>
                       <ul class="post-info">
                         <li><a href="#">{{ $post->user->name }}</a></li>
                         <li><a href="#">{{ $post->created_at->format('M d, Y') }}</a></li>

@@ -27,7 +27,7 @@ https://www.tooplate.com/view/2115-marvel
   <body>
 @include('components/header')
     <!-- MENU -->
-    <!-- <nav class="navbar navbar-expand-sm navbar-light">
+     <nav class="navbar navbar-expand-sm navbar-light">
         <div class="container">
             <a class="navbar-brand" href="index.html"><i class='uil uil-user'></i> Marvel</a>
 
@@ -64,7 +64,7 @@ https://www.tooplate.com/view/2115-marvel
                 </ul>
             </div>
         </div>
-    </nav> -->
+    </nav>
 
     <!-- ABOUT -->
     <section class="about full-screen d-lg-flex justify-content-center align-items-center" id="about">

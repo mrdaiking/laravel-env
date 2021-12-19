@@ -41,7 +41,7 @@ https://templatemo.com/tm-551-stand-blog
     <!-- ***** Preloader End ***** -->
 
     <!-- Header -->
-  @include('components/header')
+    @include('components/header', ['categories' => $categories])
 
     <!-- Page Content -->
     <!-- Banner Starts Here -->
@@ -76,7 +76,12 @@ https://templatemo.com/tm-551-stand-blog
                       <h2>Send us a message</h2>
                     </div>
                     <div class="content">
-                      <form id="contact" action="" method="post">
+                      <form action="{{ route('website.contact') }}" id="contact" method="post">
+                        @csrf 
+                        @include('includes.errors')
+                        @if(Session::has('message-send'))
+                          <div class="alert alert-success">{{ Session::get('message-send') }}</div>
+                        @endif
                         <div class="row">
                           <div class="col-md-6 col-sm-12">
                             <fieldset>

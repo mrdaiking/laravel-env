@@ -254,6 +254,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </a>                    
           </li>
           <li class="nav-item mt-auto">
+            <a href="{{ route('contact.index') }}" class="nav-link {{ (request()->is('admin/contact*')) ? 'active': '' }}">
+              <i class="nav-icon fas fa-envelope"></i>
+              <p>
+                Messages
+              </p>
+            </a>                    
+          </li>
+          <li class="nav-item mt-auto">
             <a href="{{ route('setting.index') }}" class="nav-link {{ (request()->is('admin/setting')) ? 'active': '' }}">
               <i class="nav-icon fas fa-cog"></i>
               <p>
